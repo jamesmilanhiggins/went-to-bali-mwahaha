@@ -4,8 +4,18 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
-    
+
+
+
   end
+
+  def show
+   @product = Product.find(params.fetch(:id))
+   respond_to do |format|
+     format.html { redirect_to product_path(@product) }
+     format.js
+   end
+ end
 
   def new
     @product = Product.new

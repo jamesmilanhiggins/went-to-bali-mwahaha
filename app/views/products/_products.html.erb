@@ -1,0 +1,4 @@
+<h5>Info about <%= @product.name %></h5>
+<p>Description:<%= @product.description %></p>
+<p>Price:<%= number_to_currency @product.price %></p>
+<p><%= image_tag @product.image, size: "200x200" %></p>

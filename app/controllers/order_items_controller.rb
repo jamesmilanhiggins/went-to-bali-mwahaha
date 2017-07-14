@@ -10,7 +10,11 @@ class OrderItemsController < ApplicationController
       format.html { redirect_to products_path}
       format.js
     end
+    def show
+      @order = Order.find(params[:id])
 
+
+    end
 
   end
 

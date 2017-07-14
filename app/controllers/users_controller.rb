@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       redirect_to '/'
+      flash[:notice] = "You successfully signed up!!!"
     else
       redirect_to '/signup'
     end

@@ -12,6 +12,18 @@
         <%= f.number_field :quantity, min: 1, placeholder: "enter quantity" %>
         <span class="waves-effect waves-light btn"><%= f.submit "Add to cart" %></span>
       <% end %>
+
+      <% if current_user.admin %>
+      <p><%= link_to "Edit Product", edit_product_path(product) %> </p>
+      <p>  <%= link_to "Delete this Product", product_path(product),
+                :data => {:confirm => "Are you sure?",
+                  :method => "delete"} %></p>
+
+
+
+      <% end %>
+
+      <hr>
     </div>
   <% end %>
   </div>

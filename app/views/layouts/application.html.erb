@@ -10,16 +10,17 @@
   <nav>
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li id="cart-number"><%= render partial: "layouts/cart"%></li>
 
 
         <li><%= link_to "See all products", products_path %></li>
 
-        <% if current_user && current_user.admin %>
-          <li><%= link_to "Add a new product", new_product_path %></li>
-          <li><%= link_to "Sign out", '/sign_out' %></li>
+      <% if current_user && current_user.admin %>
+      <li class="cart-number"><%= render partial: "layouts/cart"%></li>
+        <li><%= link_to "Add a new product", new_product_path %></li>
+        <li><%= link_to "Sign out", '/sign_out' %></li>
 
-        <% elsif current_user %>
+        <% elsif current_user  %>
+          <li class="cart-number"><%= render partial: "layouts/cart"%></li>
           <li><%= current_user.email %></li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
         <% else %>

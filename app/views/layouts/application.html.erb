@@ -26,9 +26,8 @@
   </nav>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}" %>
-    <% end %>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
     <div class="container">
       <%= yield %>
     </div>

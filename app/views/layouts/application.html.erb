@@ -14,7 +14,12 @@
 
 
         <li><%= link_to "See all products", products_path %></li>
+
         <% if current_user %>
+          <li><%= link_to "Add a new product", new_product_path %></li>
+          <li><%= link_to "Sign up", 'sign_up' %></li>
+          <li><%= link_to "Sign in", '/sign_in' %></li>
+        <% elsif current_user %>
           <li><%= current_user.email %></li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
         <% else %>

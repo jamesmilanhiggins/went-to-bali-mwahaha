@@ -7,14 +7,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
+    # if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to '/'
       flash[:notice] = "You successfully signed in!!!"
-
-    else
-      redirect_to '/sign_in'
-    end
+      redirect_to '/'
+    # else
+    #   redirect_to '/sign_in'
+    # end
   end
 
   def destroy

@@ -9,6 +9,7 @@
       name: "Admin",
       email: "admin@gmail.com",
       password_digest: "password",
+      admin: true
     )
 
   # end

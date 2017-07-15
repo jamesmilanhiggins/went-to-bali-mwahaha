@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  before_action :only => [:edit] do
-    redirect_to '/' unless current_user.admin || current_user
-  end
-
+  
   def new
   end
 

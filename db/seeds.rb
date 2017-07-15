@@ -5,12 +5,12 @@
     # seed = Seed.new
     # seed.generate_products
 
-    user = User.create(
-      name: "Admin",
-      email: "admin@gmail.com",
-      password_digest: "password",
-      admin: true
-    )
+  user = User.create(
+    name: "Admin",
+    email: "admin@gmail.com",
+    password_digest: "password",
+    admin: true
+  )
 
   # end
 

@@ -1,5 +1,5 @@
 <h1>Shopping Cart</h1>
- <% if current_user || current_user.admin%>
+ <% if current_user || current_user.try(:admin)%>
   <% if @order_items.any? %>
     <% @order_items.each do |item| %>
       <div id="item-<%=item.id %>">
